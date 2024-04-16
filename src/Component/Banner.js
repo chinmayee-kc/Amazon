@@ -1,12 +1,11 @@
 import React from 'react';
+import { HamburgerButton } from './HamburgerButton';
 export const Banner = () => {
   return (
     <>
     <div className='menu-bar'>
     <div className='amazon-menu'>
-            <div className='hamburger-btn'>
-                <img className="btn" src='menu (1).png' alt='menu icon'/><span className='all'>All</span>
-            </div>
+            {/* <HamburgerButton/> */}
             <ul className='banner-list hide-for-mobile'>
                 <li>Fresh</li>
                 <li>Mobiles</li>
