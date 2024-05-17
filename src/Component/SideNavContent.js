@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from  "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useNavigate } from 'react-router-dom';
 
 export const SideNavContent = ({ firstTitle, one, two, three, four,secondTitle,five,six,seven,eight,thirdTitle,nine,ten,eleven,twelve,fourthTitle,thirteen,fourteen,fifteen,sixteen}) => {
   const [isOpenOne, setIsOpenOne] = useState(false);
@@ -13,14 +14,14 @@ export const SideNavContent = ({ firstTitle, one, two, three, four,secondTitle,f
   const [isOpenSix, setIsOpenSix] = useState(false);
   const [isOpenSeven, setIsOpenSeven] = useState(false);
   const [isOpenEight, setIsOpenEight] = useState(false);
-  const [isOpenNine, setIsOpenNine] = useState(false);
-
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem('loggedin');
+    navigate('/login');
+};
   const toggleSubmenuOne = () => {
     setIsOpenOne(!isOpenOne);
   };
-  // const toggleSubmenuOne = () => {
-  //   setIsOpenOne(prevState => !prevState);
-  // };
   
   const toggleSubmenuTwo = () => {
     setIsOpenTwo(!isOpenTwo);
@@ -44,6 +45,7 @@ export const SideNavContent = ({ firstTitle, one, two, three, four,secondTitle,f
   const toggleSubmenuEight = () => {
     setIsOpenEight(!isOpenEight);
   };
+ 
  
   return (
     < >
@@ -240,13 +242,7 @@ export const SideNavContent = ({ firstTitle, one, two, three, four,secondTitle,f
           <li className='sidebar-list'>{thirteen}</li> 
           <li className='sidebar-list'>{fourteen}</li>
           <li className='sidebar-list'>{fifteen}</li>
-          <a href='/login'>
-            <li className='sidebar-list td-none'>{sixteen}</li>
-          </a>
-          
-          
-
-
+          <li className='sidebar-list td-none ' onClick={handleLogout} >{sixteen}</li>
          
         </ul>
     </>

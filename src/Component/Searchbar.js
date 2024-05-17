@@ -7,15 +7,24 @@ export const Searchbar = ({ onSearch }) => {
         onSearch(value); 
     };
     return (
-        <div>
-            <input 
-                type="text"
-                placeholder="Search here..."
-                className="search"
-                value={query}
-                onChange={handleInputChange}
-            />
-        </div>
+        <>
+         <div className='nav-search'>
+              <select className="search-select hide-for-mobile">
+                <option>All</option>
+              </select>
+              <input 
+               type="text"
+               placeholder='Search Amazon'
+               className="search-input"
+               value={query}
+               onChange={handleInputChange}
+              />
+                <div className='search-icon hide-for-mobile'>
+                   <img src="icons8-search-25.png" alt="search icon"/>
+                </div>
+            </div>
+           
+        </>
     );
 }
 

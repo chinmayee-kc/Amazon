@@ -33,7 +33,7 @@ export const Sidebar = (props) => {
             thirteen="Your Account"
             fourteen="Customer Service"
             fifteen="Contact us"
-            sixteen="Sign in"
+            sixteen="Sign Out"
         /> 
     </div>
   )
